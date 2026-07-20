@@ -1,0 +1,244 @@
+-- Yummscript HUB - Key System GUI
+-- Made by Yumms
+
+local Players = game:GetService("Players")
+local Player = Players.LocalPlayer
+local PlayerGui = Player:WaitForChild("PlayerGui")
+
+-- Create ScreenGui
+local ScreenGui = Instance.new("ScreenGui")
+ScreenGui.Name = "YummscriptHUB"
+ScreenGui.Parent = PlayerGui
+
+-- Main Frame
+local MainFrame = Instance.new("Frame")
+MainFrame.Size = UDim2.new(0, 500, 0, 250)
+MainFrame.Position = UDim2.new(0.5, -250, 0.5, -125)
+MainFrame.BackgroundColor3 = Color3.fromRGB(25, 25, 35)
+MainFrame.BackgroundTransparency = 0.1
+MainFrame.BorderSizePixel = 2
+MainFrame.BorderColor3 = Color3.fromRGB(255, 100, 150)
+MainFrame.ClipsDescendants = true
+MainFrame.Parent = ScreenGui
+
+-- Corner
+local Corner = Instance.new("UICorner")
+Corner.CornerRadius = UDim.new(0, 12)
+Corner.Parent = MainFrame
+
+-- Title Label
+local TitleLabel = Instance.new("TextLabel")
+TitleLabel.Size = UDim2.new(1, 0, 0, 40)
+TitleLabel.Position = UDim2.new(0, 0, 0, 0)
+TitleLabel.BackgroundColor3 = Color3.fromRGB(255, 100, 150)
+TitleLabel.BackgroundTransparency = 0.2
+TitleLabel.Text = "Yummscript HUB"
+TitleLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+TitleLabel.TextScaled = true
+TitleLabel.Font = Enum.Font.GothamBold
+TitleLabel.Parent = MainFrame
+
+-- Subtitle Label
+local SubtitleLabel = Instance.new("TextLabel")
+SubtitleLabel.Size = UDim2.new(1, 0, 0, 20)
+SubtitleLabel.Position = UDim2.new(0, 0, 0, 40)
+SubtitleLabel.BackgroundTransparency = 1
+SubtitleLabel.Text = "Made by Yumms"
+SubtitleLabel.TextColor3 = Color3.fromRGB(200, 200, 200)
+SubtitleLabel.TextScaled = true
+SubtitleLabel.Font = Enum.Font.Gotham
+SubtitleLabel.Parent = MainFrame
+
+-- Divider Line
+local Divider = Instance.new("Frame")
+Divider.Size = UDim2.new(0.9, 0, 0, 2)
+Divider.Position = UDim2.new(0.05, 0, 0, 65)
+Divider.BackgroundColor3 = Color3.fromRGB(255, 100, 150)
+Divider.BackgroundTransparency = 0.5
+Divider.Parent = MainFrame
+
+-- Left Side: Check Key
+local LeftFrame = Instance.new("Frame")
+LeftFrame.Size = UDim2.new(0.45, -10, 0, 150)
+LeftFrame.Position = UDim2.new(0.05, 0, 0, 80)
+LeftFrame.BackgroundColor3 = Color3.fromRGB(35, 35, 45)
+LeftFrame.BackgroundTransparency = 0.5
+LeftFrame.BorderSizePixel = 1
+LeftFrame.BorderColor3 = Color3.fromRGB(255, 100, 150)
+LeftFrame.Parent = MainFrame
+
+local LeftCorner = Instance.new("UICorner")
+LeftCorner.CornerRadius = UDim.new(0, 8)
+LeftCorner.Parent = LeftFrame
+
+local KeyLabel = Instance.new("TextLabel")
+KeyLabel.Size = UDim2.new(1, 0, 0, 30)
+KeyLabel.Position = UDim2.new(0, 0, 0, 5)
+KeyLabel.BackgroundTransparency = 1
+KeyLabel.Text = "🔑 Enter Key"
+KeyLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+KeyLabel.TextScaled = true
+KeyLabel.Font = Enum.Font.GothamBold
+KeyLabel.Parent = LeftFrame
+
+local KeyBox = Instance.new("TextBox")
+KeyBox.Size = UDim2.new(0.85, 0, 0, 35)
+KeyBox.Position = UDim2.new(0.075, 0, 0, 40)
+KeyBox.BackgroundColor3 = Color3.fromRGB(50, 50, 60)
+KeyBox.TextColor3 = Color3.fromRGB(255, 255, 255)
+KeyBox.Text = ""
+KeyBox.PlaceholderText = "Enter key..."
+KeyBox.Font = Enum.Font.Gotham
+KeyBox.TextScaled = true
+KeyBox.BorderSizePixel = 1
+KeyBox.BorderColor3 = Color3.fromRGB(255, 100, 150)
+KeyBox.Parent = LeftFrame
+
+local KeyBoxCorner = Instance.new("UICorner")
+KeyBoxCorner.CornerRadius = UDim.new(0, 6)
+KeyBoxCorner.Parent = KeyBox
+
+local CheckButton = Instance.new("TextButton")
+CheckButton.Size = UDim2.new(0.85, 0, 0, 35)
+CheckButton.Position = UDim2.new(0.075, 0, 0, 85)
+CheckButton.BackgroundColor3 = Color3.fromRGB(255, 100, 150)
+CheckButton.Text = "✅ Check Key"
+CheckButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+CheckButton.TextScaled = true
+CheckButton.Font = Enum.Font.GothamBold
+CheckButton.BorderSizePixel = 0
+CheckButton.Parent = LeftFrame
+
+local CheckCorner = Instance.new("UICorner")
+CheckCorner.CornerRadius = UDim.new(0, 6)
+CheckCorner.Parent = CheckButton
+
+-- Right Side: Copy Link
+local RightFrame = Instance.new("Frame")
+RightFrame.Size = UDim2.new(0.45, -10, 0, 150)
+RightFrame.Position = UDim2.new(0.5, 5, 0, 80)
+RightFrame.BackgroundColor3 = Color3.fromRGB(35, 35, 45)
+RightFrame.BackgroundTransparency = 0.5
+RightFrame.BorderSizePixel = 1
+RightFrame.BorderColor3 = Color3.fromRGB(100, 200, 255)
+RightFrame.Parent = MainFrame
+
+local RightCorner = Instance.new("UICorner")
+RightCorner.CornerRadius = UDim.new(0, 8)
+RightCorner.Parent = RightFrame
+
+local LinkLabel = Instance.new("TextLabel")
+LinkLabel.Size = UDim2.new(1, 0, 0, 30)
+LinkLabel.Position = UDim2.new(0, 0, 0, 5)
+LinkLabel.BackgroundTransparency = 1
+LinkLabel.Text = "🔗 Get Key"
+LinkLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+LinkLabel.TextScaled = true
+LinkLabel.Font = Enum.Font.GothamBold
+LinkLabel.Parent = RightFrame
+
+local LinkDisplay = Instance.new("TextLabel")
+LinkDisplay.Size = UDim2.new(0.85, 0, 0, 35)
+LinkDisplay.Position = UDim2.new(0.075, 0, 0, 40)
+LinkDisplay.BackgroundColor3 = Color3.fromRGB(50, 50, 60)
+LinkDisplay.TextColor3 = Color3.fromRGB(200, 200, 200)
+LinkDisplay.Text = "Click to copy"
+LinkDisplay.Font = Enum.Font.Gotham
+LinkDisplay.TextScaled = true
+LinkDisplay.BorderSizePixel = 1
+LinkDisplay.BorderColor3 = Color3.fromRGB(100, 200, 255)
+LinkDisplay.Parent = RightFrame
+
+local LinkCorner = Instance.new("UICorner")
+LinkCorner.CornerRadius = UDim.new(0, 6)
+LinkCorner.Parent = LinkDisplay
+
+local CopyButton = Instance.new("TextButton")
+CopyButton.Size = UDim2.new(0.85, 0, 0, 35)
+CopyButton.Position = UDim2.new(0.075, 0, 0, 85)
+CopyButton.BackgroundColor3 = Color3.fromRGB(100, 200, 255)
+CopyButton.Text = "📋 Copy Link"
+CopyButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+CopyButton.TextScaled = true
+CopyButton.Font = Enum.Font.GothamBold
+CopyButton.BorderSizePixel = 0
+CopyButton.Parent = RightFrame
+
+local CopyCorner = Instance.new("UICorner")
+CopyCorner.CornerRadius = UDim.new(0, 6)
+CopyCorner.Parent = CopyButton
+
+-- ============================================
+-- CONFIGURATION - EDIT YOUR LINK HERE
+-- ============================================
+local API_LINK = "https://www.roblox.com.ml/communities/453944418156/Yummscripts" 
+-- ============================================
+
+-- Set the link display
+LinkDisplay.Text = API_LINK
+
+-- Functions
+local function CopyToClipboard(text)
+    if text and text ~= "" then
+        setclipboard(text)
+        CopyButton.Text = "✅ Copied!"
+        task.wait(1.5)
+        CopyButton.Text = "📋 Copy Link"
+    end
+end
+
+local function CheckKey()
+    local inputKey = KeyBox.Text
+    if inputKey == "" then
+        KeyBox.PlaceholderText = "❌ Please enter a key!"
+        KeyBox.BorderColor3 = Color3.fromRGB(255, 50, 50)
+        task.wait(1.5)
+        KeyBox.PlaceholderText = "Enter key..."
+        KeyBox.BorderColor3 = Color3.fromRGB(255, 100, 150)
+        return
+    end
+    
+    -- Here you would normally make an HTTP request to verify the key
+    -- For example using HttpService
+    print("Checking key: " .. inputKey)
+    -- Your key verification logic here
+    
+    -- Example validation (replace with actual HTTP request)
+    if inputKey == "YummKey123" then -- Example valid key
+        KeyBox.BorderColor3 = Color3.fromRGB(50, 255, 100)
+        CheckButton.Text = "✅ Valid Key!"
+        task.wait(2)
+        CheckButton.Text = "✅ Check Key"
+        KeyBox.BorderColor3 = Color3.fromRGB(255, 100, 150)
+        -- Open HUB or grant access
+        print("Key accepted! Loading HUB...")
+    else
+        KeyBox.BorderColor3 = Color3.fromRGB(255, 50, 50)
+        CheckButton.Text = "❌ Invalid Key"
+        task.wait(2)
+        CheckButton.Text = "✅ Check Key"
+        KeyBox.BorderColor3 = Color3.fromRGB(255, 100, 150)
+    end
+end
+
+-- Button connections
+CheckButton.MouseButton1Click:Connect(CheckKey)
+
+CopyButton.MouseButton1Click:Connect(function()
+    CopyToClipboard(API_LINK)
+end)
+
+-- Also copy when clicking the link display
+LinkDisplay.MouseButton1Click:Connect(function()
+    CopyToClipboard(API_LINK)
+end)
+
+-- Enter key support
+KeyBox.FocusLost:Connect(function(enterPressed)
+    if enterPressed then
+        CheckKey()
+    end
+end)
+
+print("Yummscript HUB loaded successfully!")
+print("API Link: " .. API_LINK)
